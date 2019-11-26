@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
   ],
@@ -14,6 +15,5 @@ import { AppComponent } from "./app.component";
     NgxOnlyOfficeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
 })
 export class AppModule { }

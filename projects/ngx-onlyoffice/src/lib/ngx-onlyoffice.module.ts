@@ -1,12 +1,9 @@
-import { NgModule } from '@angular/core';
-import { NgxOnlyOfficeComponent } from './ngx-onlyoffice.component';
-
-
+import { NgModule } from "@angular/core";
+import { NgxOnlyOfficeComponent } from "./ngx-onlyoffice.component";
 
 @NgModule({
   declarations: [NgxOnlyOfficeComponent],
-  imports: [
-  ],
-  exports: [NgxOnlyOfficeComponent]
+  exports: [NgxOnlyOfficeComponent],
+  imports: [],
 })
 export class NgxOnlyOfficeModule { }

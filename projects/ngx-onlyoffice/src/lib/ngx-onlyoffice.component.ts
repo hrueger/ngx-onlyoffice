@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from "@angular/core";
-
 declare const DocsAPI: any;
 
 @Component({
@@ -10,12 +9,12 @@ declare const DocsAPI: any;
   `,
 })
 export class NgxOnlyOfficeComponent implements OnInit {
-  @Input("config") public config: {script: string, editorConf: any};
+  @Input("config") public config: {script: string, editorConfig: any};
   public ngOnInit() {
     this.loadScript(this.config.script).then((i) => {
-      const docEditor = new DocsAPI.DocEditor("onlyofficeEditor",this.config.editorConf);
-    }).catch((e) => console.log(e));
-    
+      const docEditor = new DocsAPI.DocEditor("onlyofficeEditor", this.config.editorConfig);
+    // tslint:disable-next-line: no-console
+    }).catch((e) => console.error(e));
   }
 
   public loadScript(src) {

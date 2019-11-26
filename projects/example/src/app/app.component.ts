@@ -7,48 +7,54 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   public myConfig = {
-    script: "http://178.32.249.86/OfficeWeb/apps/api/documents/api.js",
-    editorConf: {
-        width: "100%",
-        height: "100%",
-        type: "desktop",
-        documentType: "text",
-        document: {
-            fileType: "docs",
-            key: "3277238458",
-            title: "TestTitle",
-            url: "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
-            vkey: "QUlIYW93WXNWM2E1RGxMeVFWdytxdm8yQW9RUjJoeFcveXorc1hlQmQrZz0_eyJleHBpcmUiOiJcL0RhdGUoMTU3NDc1MDc4NjA3NClcLyIsImtleSI6IjMyNzcyMzg0NTgiLCJrZXlfaWQiOiJfQ29udGFjdFVzXyIsInVzZXJfY291bnQiOjAsImlwIjoiNjYuOC4yMDUuMTc3In01",
-            info: {
-                author: "Me",
-                created: "26.11.19",
-            },
-
-            permissions: {
-                edit: true,
-                download: true,
-            },
+    editorConfig: {
+      document: {
+        fileType: "docs",
+        info: {
+          author: "Me",
+          created: "26.11.19",
         },
-        editorConfig: {
-            mode: "edit",
-            lang: "en",
-            callbackUrl: "http://178.32.249.86:81/onlyoffice_php/webeditor-ajax.php?\
-type=track&userAddress=66.8.205.177&fileName=demo+%281%29.docx",
-            embedded: {
-                saveUrl: "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
-                embedUrl: "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
-                shareUrl: "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
-                toolbarDocked: "top",
-            },
+        key: "3277238458",
+        permissions: {
+          download: true,
+          edit: true,
         },
-        events: {
-            onReady: console.log,
-            onBack: console.log,
-            onDocumentStateChange: console.log,
-            onRequestEditRights: console.log,
-            onSave: console.log,
-            onError: console.log,
+        title: "TestTitle",
+        url:
+          "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
+      },
+      documentType: "text",
+      editorConfig: {
+        embedded: {
+          embedUrl:
+            "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
+          saveUrl:
+            "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
+          shareUrl:
+            "http://178.32.249.86:81/onlyoffice_php/app_data/66.8.205.177/demo (1).docx",
+          toolbarDocked: "top",
         },
+        lang: "en",
+        mode: "edit",
+      },
+      events: {
+        // tslint:disable-next-line: no-console
+        onBack: console.log,
+        // tslint:disable-next-line: no-console
+        onDocumentStateChange: console.log,
+        // tslint:disable-next-line: no-console
+        onError: console.log,
+        // tslint:disable-next-line: no-console
+        onReady: console.log,
+        // tslint:disable-next-line: no-console
+        onRequestEditRights: console.log,
+        // tslint:disable-next-line: no-console
+        onSave: console.log,
+      },
+      height: "100%",
+      type: "desktop",
+      width: "100%",
     },
+    script: "http://178.32.249.86/OfficeWeb/apps/api/documents/api.js",
   };
 }
