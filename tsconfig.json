@@ -24,6 +24,9 @@
       ],
       "ngx-onlyoffice/*": [
         "dist/ngx-onlyoffice/*"
+      ],
+      "@angular/*": [
+        "./node_modules/@angular/*"
       ]
     }
   },
