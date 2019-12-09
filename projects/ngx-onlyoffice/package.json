@@ -1,6 +1,11 @@
 {
   "name": "ngx-onlyoffice",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hrueger/ngx-onlyoffice"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

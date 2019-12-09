@@ -1,27 +1,89 @@
 # NgxOnlyoffice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+This library displays the OnlyOffice viewer or editor in your Angular application.
 
-## Development server
+Note, that you have to host the server yourself.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
+Type `npm i ngx-onlyoffice` in your command prompt.
 
-## Code scaffolding
+## Usage
+See below or refer to the [example](https://github.com/hrueger/ngx-onlyoffice/tree/master/projects/example/src/app).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Include the module in `your app.module.ts`.
+```typescript
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgxOnlyOfficeModule } from "ngx-onlyoffice";  // <-- here
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-## Build
+@NgModule({
+  bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    ...
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgxOnlyOfficeModule, // <-- and here
+    ...
+  ],
+  providers: [],
+})
+export class AppModule { }
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Use in your template:
+```html
+<onlyoffice [config]="myConfig"></onlyoffice>
+```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+An example config:
+```typescript
+public myConfig = {
+    /*
+        editorConfig is the original config for onlyoffice, see docs under https://api.onlyoffice.com/editors/config/document
+    */
+    editorConfig: { 
+      document: {
+        fileType: "docs",
+        info: {
+          author: "Me",
+          created: "26.11.19",
+        },
+        key: "3277238458",
+        permissions: {
+          download: true,
+          edit: true,
+        },
+        title: "TestTitle",
+        url: "example.com",
+      },
+      documentType: "text",
+      editorConfig: {
+        embedded: {
+          embedUrl: "example.com",
+          saveUrl: "example.com",
+          shareUrl: "example.com",
+          toolbarDocked: "top",
+        },
+        lang: "en",
+        mode: "edit",
+      },
+      events: {
+        onBack: console.log,
+        onDocumentStateChange: console.log,
+        onError: console.log,
+        onReady: console.log,
+        onRequestEditRights: console.log,
+        onSave: console.log,
+      },
+      height: "100%",
+      type: "desktop",
+      width: "100%",
+    },
+    script: "https://example-server.com/api/api.js", // <-- This is the api script URL.
+  };
+```

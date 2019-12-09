@@ -1,14 +1,20 @@
 {
   "name": "ngx-onlyoffice",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && copy README.md dist\\ngx-onlyoffice\\README.md",
+    "publish": "npm run build && cd dist\\ngx-onlyoffice && npm publish",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hrueger/ngx-onlyoffice"
+  },
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.7",
