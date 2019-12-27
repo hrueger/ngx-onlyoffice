@@ -1,5 +1,7 @@
 # NgxOnlyoffice
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hrueger/ngx-onlyoffice.svg)](https://greenkeeper.io/)
+
 This library displays the OnlyOffice viewer or editor in your Angular application.
 
 Note, that you have to host the server yourself.
