@@ -9,7 +9,7 @@ export class AppComponent {
   public myConfig = {
     editorConfig: {
       document: {
-        fileType: "docs",
+        fileType: "docx",
         info: {
           author: "Me",
           created: "26.11.19",
