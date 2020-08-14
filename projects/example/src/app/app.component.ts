@@ -55,6 +55,6 @@ export class AppComponent {
       type: "desktop",
       width: "100%",
     },
-    script: "http://178.32.249.86/OfficeWeb/apps/api/documents/api.js",
+    script: "http://localhost:8080/web-apps/apps/api/documents/api.js",
   };
 }

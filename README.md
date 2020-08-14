@@ -86,6 +86,6 @@ public myConfig = {
       type: "desktop",
       width: "100%",
     },
-    script: "https://example-server.com/api/api.js", // <-- This is the api script URL.
+    script: "https://office.example-server/web-apps/apps/api/documents/api.js", // <-- This is the api script URL.
   };
 ```
