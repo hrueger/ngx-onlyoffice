@@ -8,15 +8,9 @@ declare const DocsAPI: any;
     <div id="onlyofficeEditor"></div>
   `,
 })
-export class NgxOnlyOfficeComponent implements OnInit {
+export class NgxOnlyOfficeComponent {
   @Input("config") public config: {script: string, editorConfig: any};
   public editor: any;
-  public ngOnInit() {
-    this.loadScript(this.config.script).then((i) => {
-      this.createEditor();
-    // tslint:disable-next-line: no-console
-    }).catch((e) => console.error(e));
-  }
 
   public ngOnChanges() {
     if (this.editor) {
@@ -26,7 +20,14 @@ export class NgxOnlyOfficeComponent implements OnInit {
   }
 
   private createEditor() {
-    this.editor = new DocsAPI.DocEditor("onlyofficeEditor", this.config.editorConfig);
+    if (typeof DocsAPI !== "undefined") {
+      this.editor = new DocsAPI.DocEditor("onlyofficeEditor", this.config.editorConfig);
+    } else {
+      this.loadScript(this.config.script).then((i) => {
+        this.createEditor();
+      // tslint:disable-next-line: no-console
+      }).catch((e) => console.error(e));
+    }
   }
 
   public loadScript(src) {
