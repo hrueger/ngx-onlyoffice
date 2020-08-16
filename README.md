@@ -92,3 +92,35 @@ public myConfig = {
     script: "https://office.example-server/web-apps/apps/api/documents/api.js", // <-- This is the api script URL.
   };
 ```
+
+## Config Changes
+When you change the config, the editor will reload automatically. For this to work, you need to **replace the entire config object**. Just changing one property won't trigger a reload. Example:
+```TypeScript
+// wrong
+this.config.editorConfig.document.title = "New Title";
+
+// right
+this.config = {
+  editorConfig: {
+    document: {
+      title: "New title",
+      ...
+    },
+    ...
+  },
+  ...
+}
+```
+Note that here you have to specify the whole configuration object, just some properties won't work.
+
+However, if you just want to change some properties, you can use `Object.assign` like so:
+```TypeScript
+this.config = Object.assign({}, this.config, {
+    editorConfig: {
+        title: "New Title"
+    }
+})
+```
+
+## License
+MIT
