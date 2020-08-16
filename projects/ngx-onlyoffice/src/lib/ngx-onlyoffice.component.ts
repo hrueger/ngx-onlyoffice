@@ -13,9 +13,18 @@ export class NgxOnlyOfficeComponent implements OnInit {
   public editor: any;
   public ngOnInit() {
     this.loadScript(this.config.script).then((i) => {
-      this.editor = new DocsAPI.DocEditor("onlyofficeEditor", this.config.editorConfig);
+      this.createEditor();
     // tslint:disable-next-line: no-console
     }).catch((e) => console.error(e));
+  }
+
+  public ngOnChanges() {
+    this.editor.destroyEditor();
+    this.createEditor();
+  }
+
+  private createEditor() {
+    this.editor = new DocsAPI.DocEditor("onlyofficeEditor", this.config.editorConfig);
   }
 
   public loadScript(src) {
