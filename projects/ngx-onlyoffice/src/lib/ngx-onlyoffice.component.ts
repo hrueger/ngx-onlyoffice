@@ -19,7 +19,9 @@ export class NgxOnlyOfficeComponent implements OnInit {
   }
 
   public ngOnChanges() {
-    this.editor.destroyEditor();
+    if (this.editor) {
+      this.editor.destroyEditor();
+    }
     this.createEditor();
   }
 
