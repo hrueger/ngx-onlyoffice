@@ -2,7 +2,7 @@
 ![Available on npm](https://img.shields.io/npm/v/ngx-onlyoffice)
 [![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/hrueger/ngx-onlyoffice?color=brightgreen)](https://github.com/hrueger/ngx-onlyoffice/commits)
-[![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/hrueger/ngx-onlyoffice/commits)
+[![Maintenance](https://img.shields.io/maintenance/yes/2021)](https://github.com/hrueger/ngx-onlyoffice/commits)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=hrueger/ngx-onlyoffice)](https://dependabot.com)
 
 This ONLYOFFICE wrapper for Angular displays the ONLYOFFICE viewer or editor in your Angular application.
